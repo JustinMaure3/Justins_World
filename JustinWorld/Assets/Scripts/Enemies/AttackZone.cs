@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AttackZone : MonoBehaviour
-    {
+public class AttackZone : MonoBehaviour {
+
     //Function that activates when a game object enters a trigger zone
     private void OnTriggerEnter2D(Collider2D collision) {
         if (collision.tag == "Player") {

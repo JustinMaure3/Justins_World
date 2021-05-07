@@ -8,7 +8,7 @@ public class FrogController : MonoBehaviour {
     private float direction;
 
     //This is used to have a certain distance before the frog turns towards the player
-    private float turnDistance = 0.3f;
+    public float turnDistance = 0.3f;
 
     private void Awake() {
         anim = GetComponent<Animator>();

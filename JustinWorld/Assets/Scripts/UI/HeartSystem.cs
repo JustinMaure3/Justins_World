@@ -28,9 +28,9 @@ public class HeartSystem : MonoBehaviour {
     IEnumerator GetInvulnerable() {
         //ignore collision between player (9) and enemy (10) layers
         canTakeDamage = false;
-        Physics2D.IgnoreLayerCollision(9, 10, true);
+        //Physics2D.IgnoreLayerCollision(9, 10, true);
         yield return new WaitForSeconds(invincibilityTimer);
-        Physics2D.IgnoreLayerCollision(9, 10, false);
+        //Physics2D.IgnoreLayerCollision(9, 10, false);
         canTakeDamage = true;
 
     }

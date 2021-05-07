@@ -204,7 +204,7 @@ GameObject:
   - component: {fileID: 8510756496359856657}
   - component: {fileID: 2138661310}
   m_Layer: 10
-  m_Name: Frog
+  m_Name: BrownFrog
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -335,3 +335,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01ebe480002994e0a9994f7254a236bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  turnDistance: 0.3
