@@ -7,7 +7,7 @@ public class EnemyHitBox : MonoBehaviour {
     //Function to hit the player
     private void OnTriggerEnter2D(Collider2D collision) {
         if (collision.tag == "Player") {
-            collision.GetComponent<HeartSystem>().takeDamage();
+            collision.GetComponent<HeartSystem>().takeDamage(this.transform);
         }
     }
 }

@@ -177,12 +177,12 @@ public class CharacterMovement : MonoBehaviour {
         controls.Basic.Disable();
     }
 
-    void EnableMovement() {
+    public void EnableMovement() {
         controls.Basic.Move.Enable();
         controls.Basic.Jump.Enable();
     }
 
-    void DisableMovement() {
+    public void DisableMovement() {
         controls.Basic.Move.Disable();
         controls.Basic.Jump.Disable();
     }

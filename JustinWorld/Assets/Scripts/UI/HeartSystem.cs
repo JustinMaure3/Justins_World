@@ -16,7 +16,7 @@ public class HeartSystem : MonoBehaviour {
     }
 
     //This function will take away a heart
-    public void takeDamage() {
+    public void takeDamage(Transform enemy) {
         if(canTakeDamage) {
             life--;
             if (life == 0) {
@@ -28,6 +28,7 @@ public class HeartSystem : MonoBehaviour {
                 hearts[2].gameObject.GetComponent<Animator>().SetBool("isDirty", true);
             }
             _ = StartCoroutine(GetInvulnerable());
+            GetComponent<Knockback>().ActivateKnockback(enemy);
         }
     }
 

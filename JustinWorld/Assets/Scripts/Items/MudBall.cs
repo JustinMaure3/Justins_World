@@ -33,7 +33,7 @@ public class MudBall : MonoBehaviour {
     //Triggers when hits player 
     private void OnTriggerEnter2D(Collider2D collision) {
         if(collision.tag == "Player") {
-            collision.GetComponent<HeartSystem>().takeDamage();
+            collision.GetComponent<HeartSystem>().takeDamage(this.transform);
             StartCoroutine(BreakMud());
         }
     }
