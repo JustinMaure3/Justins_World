@@ -9,6 +9,12 @@ public class HeartSystem : MonoBehaviour {
     public float invincibilityTimer;
     public bool canTakeDamage = true;
 
+    public GameObject player;
+
+    private void Awake() {
+        player = GameObject.FindGameObjectWithTag("Player");
+    }
+
     //This function will take away a heart
     public void takeDamage() {
         if(canTakeDamage) {
@@ -25,13 +31,35 @@ public class HeartSystem : MonoBehaviour {
         }
     }
 
+    //This is used to make the player invincible for a few seconds
     IEnumerator GetInvulnerable() {
-        //ignore collision between player (9) and enemy (10) layers
         canTakeDamage = false;
-        //Physics2D.IgnoreLayerCollision(9, 10, true);
+        StartCoroutine(ChangeColor());
         yield return new WaitForSeconds(invincibilityTimer);
-        //Physics2D.IgnoreLayerCollision(9, 10, false);
         canTakeDamage = true;
+    }
+
+    //This is used to change the color of the player and then fade back to the original color
+    IEnumerator ChangeColor() {
+        //Set up the original states
+        SpriteRenderer renderer = player.GetComponent<SpriteRenderer>();
+        Color originalColor = renderer.color;
+        Color dmgColor = new Color(130f, 0f, 0f, 1f);
+        float fadeTime = invincibilityTimer - 1;
+
+        //Change to damage color
+        renderer.color = dmgColor;
+
+        yield return new WaitForSeconds(1);
+
+        //Fade back to original color
+        for(float time = 0; time < 1.0f; time += Time.deltaTime/fadeTime) {
+            renderer.color = Color.Lerp(dmgColor, originalColor, time);
+            yield return null;
+        }
+
+        //turn player color back to normal
+        renderer.color = originalColor;
 
     }
 
