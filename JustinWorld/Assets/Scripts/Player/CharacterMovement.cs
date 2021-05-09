@@ -64,6 +64,11 @@ public class CharacterMovement : MonoBehaviour {
         //Makes the look up animation
         controls.Basic.LookUp.performed += _ => OnLookUp();
         controls.Basic.LookUp.canceled += _ => AfterLookUp();
+
+        //Makes the crouch animation
+        controls.Basic.Crouch.performed += _ => OnCrouch();
+        controls.Basic.Crouch.canceled += _ => AfterCrouch();
+
     }
 
     //This runs every frame
@@ -123,6 +128,21 @@ public class CharacterMovement : MonoBehaviour {
         cameraTarget.localPosition = previousPos;
         anim.SetBool("isLookingUp", false);
     }
+
+    //Function that will make the character crouch
+    private void OnCrouch() {
+        if(!isMoving && isGrounded()) {
+            DisableMovement();
+            anim.SetBool("isCrouching", true);
+        }
+    }
+
+    //Function that will cancel crouch
+    private void AfterCrouch() {
+        EnableMovement();
+        anim.SetBool("isCrouching", false);
+    }
+
 
     //Set camera position along the x axis
     private void SetCamTarget() {
