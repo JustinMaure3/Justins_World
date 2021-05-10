@@ -57,22 +57,24 @@ public class CharacterMovement : MonoBehaviour {
         controls = new PlayerActionControls();
 
         //Creates movement using the left joystick
-        controls.Basic.Move.performed += context => OnMove(context.ReadValue<Vector2>().x);
+        controls.Basic.Movement.performed += context => OnMove(context.ReadValue<Vector2>().x);
+
         //Creates jump
         controls.Basic.Jump.performed += _ => OnJump();
         controls.Basic.Jump.canceled += _ => AfterJump();
+
         //Makes the look up animation
-        controls.Basic.LookUp.performed += _ => OnLookUp();
+        controls.Basic.LookUp.started += _ => OnLookUp();
         controls.Basic.LookUp.canceled += _ => AfterLookUp();
 
         //Makes the crouch animation
-        controls.Basic.Crouch.performed += _ => OnCrouch();
+        controls.Basic.Crouch.started += _ => OnCrouch();
         controls.Basic.Crouch.canceled += _ => AfterCrouch();
 
     }
 
     //This runs every frame
-    private void FixedUpdate() {
+    private void Update() {
         SetAnim();
     }
 
@@ -144,6 +146,11 @@ public class CharacterMovement : MonoBehaviour {
     }
 
 
+
+
+
+
+
     //Set camera position along the x axis
     private void SetCamTarget() {
         if(isMoving) {
@@ -188,6 +195,10 @@ public class CharacterMovement : MonoBehaviour {
         wasOnGround = isGrounded();
     }
 
+
+
+
+
     //On Enable and disable for button presses
     void OnEnable() {
         controls.Basic.Enable();
@@ -198,12 +209,12 @@ public class CharacterMovement : MonoBehaviour {
     }
 
     public void EnableMovement() {
-        controls.Basic.Move.Enable();
+        controls.Basic.Movement.Enable();
         controls.Basic.Jump.Enable();
     }
 
     public void DisableMovement() {
-        controls.Basic.Move.Disable();
+        controls.Basic.Movement.Disable();
         controls.Basic.Jump.Disable();
     }
 }

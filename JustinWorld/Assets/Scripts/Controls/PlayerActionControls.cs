@@ -27,7 +27,7 @@ public class @PlayerActionControls : IInputActionCollection, IDisposable
                     ""interactions"": """"
                 },
                 {
-                    ""name"": ""Move"",
+                    ""name"": ""Movement"",
                     ""type"": ""PassThrough"",
                     ""id"": ""1ba375ce-19a6-45b5-820d-eacc85e59178"",
                     ""expectedControlType"": ""Vector2"",
@@ -65,12 +65,12 @@ public class @PlayerActionControls : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""af87fa4a-5aa9-4d78-875f-f53182067b70"",
+                    ""id"": ""a6632613-a1f7-4c26-8232-011cf63c17c3"",
                     ""path"": ""<Gamepad>/leftStick"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Move"",
+                    ""action"": ""Movement"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -104,7 +104,7 @@ public class @PlayerActionControls : IInputActionCollection, IDisposable
         // Basic
         m_Basic = asset.FindActionMap("Basic", throwIfNotFound: true);
         m_Basic_Jump = m_Basic.FindAction("Jump", throwIfNotFound: true);
-        m_Basic_Move = m_Basic.FindAction("Move", throwIfNotFound: true);
+        m_Basic_Movement = m_Basic.FindAction("Movement", throwIfNotFound: true);
         m_Basic_LookUp = m_Basic.FindAction("LookUp", throwIfNotFound: true);
         m_Basic_Crouch = m_Basic.FindAction("Crouch", throwIfNotFound: true);
     }
@@ -157,7 +157,7 @@ public class @PlayerActionControls : IInputActionCollection, IDisposable
     private readonly InputActionMap m_Basic;
     private IBasicActions m_BasicActionsCallbackInterface;
     private readonly InputAction m_Basic_Jump;
-    private readonly InputAction m_Basic_Move;
+    private readonly InputAction m_Basic_Movement;
     private readonly InputAction m_Basic_LookUp;
     private readonly InputAction m_Basic_Crouch;
     public struct BasicActions
@@ -165,7 +165,7 @@ public class @PlayerActionControls : IInputActionCollection, IDisposable
         private @PlayerActionControls m_Wrapper;
         public BasicActions(@PlayerActionControls wrapper) { m_Wrapper = wrapper; }
         public InputAction @Jump => m_Wrapper.m_Basic_Jump;
-        public InputAction @Move => m_Wrapper.m_Basic_Move;
+        public InputAction @Movement => m_Wrapper.m_Basic_Movement;
         public InputAction @LookUp => m_Wrapper.m_Basic_LookUp;
         public InputAction @Crouch => m_Wrapper.m_Basic_Crouch;
         public InputActionMap Get() { return m_Wrapper.m_Basic; }
@@ -180,9 +180,9 @@ public class @PlayerActionControls : IInputActionCollection, IDisposable
                 @Jump.started -= m_Wrapper.m_BasicActionsCallbackInterface.OnJump;
                 @Jump.performed -= m_Wrapper.m_BasicActionsCallbackInterface.OnJump;
                 @Jump.canceled -= m_Wrapper.m_BasicActionsCallbackInterface.OnJump;
-                @Move.started -= m_Wrapper.m_BasicActionsCallbackInterface.OnMove;
-                @Move.performed -= m_Wrapper.m_BasicActionsCallbackInterface.OnMove;
-                @Move.canceled -= m_Wrapper.m_BasicActionsCallbackInterface.OnMove;
+                @Movement.started -= m_Wrapper.m_BasicActionsCallbackInterface.OnMovement;
+                @Movement.performed -= m_Wrapper.m_BasicActionsCallbackInterface.OnMovement;
+                @Movement.canceled -= m_Wrapper.m_BasicActionsCallbackInterface.OnMovement;
                 @LookUp.started -= m_Wrapper.m_BasicActionsCallbackInterface.OnLookUp;
                 @LookUp.performed -= m_Wrapper.m_BasicActionsCallbackInterface.OnLookUp;
                 @LookUp.canceled -= m_Wrapper.m_BasicActionsCallbackInterface.OnLookUp;
@@ -196,9 +196,9 @@ public class @PlayerActionControls : IInputActionCollection, IDisposable
                 @Jump.started += instance.OnJump;
                 @Jump.performed += instance.OnJump;
                 @Jump.canceled += instance.OnJump;
-                @Move.started += instance.OnMove;
-                @Move.performed += instance.OnMove;
-                @Move.canceled += instance.OnMove;
+                @Movement.started += instance.OnMovement;
+                @Movement.performed += instance.OnMovement;
+                @Movement.canceled += instance.OnMovement;
                 @LookUp.started += instance.OnLookUp;
                 @LookUp.performed += instance.OnLookUp;
                 @LookUp.canceled += instance.OnLookUp;
@@ -212,7 +212,7 @@ public class @PlayerActionControls : IInputActionCollection, IDisposable
     public interface IBasicActions
     {
         void OnJump(InputAction.CallbackContext context);
-        void OnMove(InputAction.CallbackContext context);
+        void OnMovement(InputAction.CallbackContext context);
         void OnLookUp(InputAction.CallbackContext context);
         void OnCrouch(InputAction.CallbackContext context);
     }

@@ -14,7 +14,7 @@
                     "interactions": ""
                 },
                 {
-                    "name": "Move",
+                    "name": "Movement",
                     "type": "PassThrough",
                     "id": "1ba375ce-19a6-45b5-820d-eacc85e59178",
                     "expectedControlType": "Vector2",
@@ -52,12 +52,12 @@
                 },
                 {
                     "name": "",
-                    "id": "af87fa4a-5aa9-4d78-875f-f53182067b70",
+                    "id": "a6632613-a1f7-4c26-8232-011cf63c17c3",
                     "path": "<Gamepad>/leftStick",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Move",
+                    "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
