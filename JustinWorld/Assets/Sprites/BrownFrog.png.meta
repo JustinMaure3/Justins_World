@@ -38,6 +38,42 @@ TextureImporter:
   - first:
       213: 4179302694535890598
     second: Frog 1_11
+  - first:
+      213: 6654115821657321048
+    second: BrownFrog_0
+  - first:
+      213: 4648192211695623418
+    second: BrownFrog_1
+  - first:
+      213: -3659581636301841580
+    second: BrownFrog_2
+  - first:
+      213: -3995594470144722014
+    second: BrownFrog_3
+  - first:
+      213: -2507869015835074813
+    second: BrownFrog_4
+  - first:
+      213: 4736074076554486906
+    second: BrownFrog_5
+  - first:
+      213: 4662160082848101808
+    second: BrownFrog_6
+  - first:
+      213: 3929923198512246707
+    second: BrownFrog_7
+  - first:
+      213: 4448636981877794565
+    second: BrownFrog_8
+  - first:
+      213: -2297626161810477462
+    second: BrownFrog_9
+  - first:
+      213: 7795417495971088133
+    second: BrownFrog_10
+  - first:
+      213: -2907324401821928461
+    second: BrownFrog_11
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -123,253 +159,253 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Frog 1_0
+      name: BrownFrog_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 192
-        width: 64
-        height: 64
+        x: 5
+        y: 213
+        width: 30
+        height: 22
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: eea6f0f65593c4bf0800000000000000
-      internalID: -338832832861345042
+      spriteID: 85ee034b51b285c50800000000000000
+      internalID: 6654115821657321048
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Frog 1_1
+      name: BrownFrog_1
       rect:
         serializedVersion: 2
-        x: 64
-        y: 192
-        width: 64
-        height: 64
+        x: 69
+        y: 213
+        width: 30
+        height: 22
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1e6da6863c3a50280800000000000000
-      internalID: -9077669414229584159
+      spriteID: afcdad97032b18040800000000000000
+      internalID: 4648192211695623418
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Frog 1_2
+      name: BrownFrog_2
       rect:
         serializedVersion: 2
-        x: 128
-        y: 192
-        width: 64
-        height: 64
+        x: 133
+        y: 213
+        width: 30
+        height: 22
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9c8be9ff9922fc7e0800000000000000
-      internalID: -1743136485955159863
+      spriteID: 45b9fad14ed863dc0800000000000000
+      internalID: -3659581636301841580
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Frog 1_3
+      name: BrownFrog_3
       rect:
         serializedVersion: 2
-        x: 0
-        y: 128
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 5
+        y: 149
+        width: 34
+        height: 22
+      alignment: 9
+      pivot: {x: 0.46352038, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 626066d043e6871a0800000000000000
-      internalID: -6811573266555730394
+      spriteID: 2ab328cbffbcc88c0800000000000000
+      internalID: -3995594470144722014
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Frog 1_4
+      name: BrownFrog_4
       rect:
         serializedVersion: 2
-        x: 64
-        y: 128
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 69
+        y: 149
+        width: 58
+        height: 22
+      alignment: 9
+      pivot: {x: 0.2706925, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1cf36b8c7b05fb8d0800000000000000
-      internalID: -2828453290688757823
+      spriteID: 30f11f7da62423dd0800000000000000
+      internalID: -2507869015835074813
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Frog 1_5
+      name: BrownFrog_5
       rect:
         serializedVersion: 2
-        x: 128
-        y: 128
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 133
+        y: 149
+        width: 45
+        height: 22
+      alignment: 9
+      pivot: {x: 0.33462557, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 257f463664cd00360800000000000000
-      internalID: 7133944004628248402
+      spriteID: a7467f2a74ae9b140800000000000000
+      internalID: 4736074076554486906
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Frog 1_6
+      name: BrownFrog_6
       rect:
         serializedVersion: 2
-        x: 0
-        y: 64
-        width: 64
-        height: 64
+        x: 29
+        y: 85
+        width: 30
+        height: 22
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0209b4bc7eab28800800000000000000
-      internalID: 613258003986747424
+      spriteID: 0b5ba28e4e153b040800000000000000
+      internalID: 4662160082848101808
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Frog 1_7
+      name: BrownFrog_7
       rect:
         serializedVersion: 2
-        x: 64
-        y: 64
-        width: 64
-        height: 64
+        x: 93
+        y: 85
+        width: 30
+        height: 22
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2d59e405537333b20800000000000000
-      internalID: 3112892469563266514
+      spriteID: 3bfa3e1d354e98630800000000000000
+      internalID: 3929923198512246707
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Frog 1_8
+      name: BrownFrog_8
       rect:
         serializedVersion: 2
-        x: 128
-        y: 64
-        width: 64
-        height: 64
+        x: 157
+        y: 85
+        width: 30
+        height: 22
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1e6c47d4a047c4d00800000000000000
-      internalID: 958268408321066721
+      spriteID: 507ed7fd3cbbcbd30800000000000000
+      internalID: 4448636981877794565
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Frog 1_9
+      name: BrownFrog_9
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 25
+        y: 21
+        width: 34
+        height: 22
+      alignment: 9
+      pivot: {x: 0.53647983, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 97781247999f33170800000000000000
-      internalID: 8157137787571767161
+      spriteID: a6e64aedd213d10e0800000000000000
+      internalID: -2297626161810477462
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Frog 1_10
+      name: BrownFrog_10
       rect:
         serializedVersion: 2
-        x: 64
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 65
+        y: 21
+        width: 58
+        height: 22
+      alignment: 9
+      pivot: {x: 0.724539, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f89c4b2b9420ddea0800000000000000
-      internalID: -5846514225702975089
+      spriteID: 507c83329e2ee2c60800000000000000
+      internalID: 7795417495971088133
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Frog 1_11
+      name: BrownFrog_11
       rect:
         serializedVersion: 2
-        x: 128
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 142
+        y: 21
+        width: 45
+        height: 22
+      alignment: 9
+      pivot: {x: 0.6515937, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6a605a468addff930800000000000000
-      internalID: 4179302694535890598
+      spriteID: 3f334963cdb17a7d0800000000000000
+      internalID: -2907324401821928461
       vertices: []
       indices: 
       edges: []
