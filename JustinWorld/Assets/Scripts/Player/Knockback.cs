@@ -30,7 +30,7 @@ public class Knockback : MonoBehaviour {
 
     IEnumerator KnockBack() {
         //Stop players controls
-        GetComponent<CharacterMovement>().DisableMovement();
+        GetComponent<PlayerController>().DisableMovement();
 
         //If enemy is hitting from right
         if (enemyDirection > 0) {
@@ -45,6 +45,6 @@ public class Knockback : MonoBehaviour {
         yield return new WaitForSeconds(knockbackLength);
 
         //Enable controls
-        GetComponent<CharacterMovement>().EnableMovement();
+        GetComponent<PlayerController>().EnableMovement();
     }
 }

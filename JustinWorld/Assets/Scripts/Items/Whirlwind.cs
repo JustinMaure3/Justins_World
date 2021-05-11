@@ -36,13 +36,13 @@ public class Whirlwind : MonoBehaviour {
 
     //This will apply force to the player
     IEnumerator PushPlayer(Collider2D collision) {
-        collision.GetComponent<CharacterMovement>().DisableMovement();
+        collision.GetComponent<PlayerController>().DisableMovement();
 
         Rigidbody2D player = collision.GetComponent<Rigidbody2D>();
         player.AddForce(new Vector2(direction * windForce, 0f), ForceMode2D.Impulse);
 
         yield return new WaitForSeconds(windLength);
 
-        collision.GetComponent<CharacterMovement>().EnableMovement();
+        collision.GetComponent<PlayerController>().EnableMovement();
     }
 }

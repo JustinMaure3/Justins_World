@@ -49,6 +49,14 @@ public class @PlayerActionControls : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Axis"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Interact"",
+                    ""type"": ""Button"",
+                    ""id"": ""ba844c82-fea1-4ed1-8dfc-9dfcadf86195"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -56,6 +64,17 @@ public class @PlayerActionControls : IInputActionCollection, IDisposable
                     ""name"": """",
                     ""id"": ""9fcdc5b4-d998-4af1-91de-dcfaa0240d84"",
                     ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Jump"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ac5720e4-aa34-405a-a303-a49bd71b987f"",
+                    ""path"": ""<Keyboard>/space"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -76,6 +95,17 @@ public class @PlayerActionControls : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""5a661ef1-c36a-4ccf-83eb-cf3b6376438a"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""LookUp"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""37624c41-e136-43e3-83f5-24391d30c21d"",
                     ""path"": ""<Gamepad>/dpad/down"",
                     ""interactions"": """",
@@ -86,7 +116,18 @@ public class @PlayerActionControls : IInputActionCollection, IDisposable
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": ""1D Axis"",
+                    ""name"": """",
+                    ""id"": ""f2df773d-413f-4396-88e8-3d3155d7ab6c"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Crouch"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""GamepadAxis"",
                     ""id"": ""980cb11b-8553-4cee-82d3-6e5100c2cd50"",
                     ""path"": ""1DAxis"",
                     ""interactions"": """",
@@ -117,6 +158,61 @@ public class @PlayerActionControls : IInputActionCollection, IDisposable
                     ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""KeyboardAxis"",
+                    ""id"": ""ce02a2c8-504d-464e-9570-d208d46ec9a9"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""10de52c7-de41-4f5e-b502-527276e3497b"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""2892b6e8-9b4b-491c-af0e-f49c05eb110f"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""083a900f-dde3-4dcc-be54-39d4816df7f1"",
+                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Interact"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""43a14f0e-0843-4713-961a-2f8956910473"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Interact"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -129,6 +225,7 @@ public class @PlayerActionControls : IInputActionCollection, IDisposable
         m_Basic_LookUp = m_Basic.FindAction("LookUp", throwIfNotFound: true);
         m_Basic_Crouch = m_Basic.FindAction("Crouch", throwIfNotFound: true);
         m_Basic_Move = m_Basic.FindAction("Move", throwIfNotFound: true);
+        m_Basic_Interact = m_Basic.FindAction("Interact", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -182,6 +279,7 @@ public class @PlayerActionControls : IInputActionCollection, IDisposable
     private readonly InputAction m_Basic_LookUp;
     private readonly InputAction m_Basic_Crouch;
     private readonly InputAction m_Basic_Move;
+    private readonly InputAction m_Basic_Interact;
     public struct BasicActions
     {
         private @PlayerActionControls m_Wrapper;
@@ -190,6 +288,7 @@ public class @PlayerActionControls : IInputActionCollection, IDisposable
         public InputAction @LookUp => m_Wrapper.m_Basic_LookUp;
         public InputAction @Crouch => m_Wrapper.m_Basic_Crouch;
         public InputAction @Move => m_Wrapper.m_Basic_Move;
+        public InputAction @Interact => m_Wrapper.m_Basic_Interact;
         public InputActionMap Get() { return m_Wrapper.m_Basic; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -211,6 +310,9 @@ public class @PlayerActionControls : IInputActionCollection, IDisposable
                 @Move.started -= m_Wrapper.m_BasicActionsCallbackInterface.OnMove;
                 @Move.performed -= m_Wrapper.m_BasicActionsCallbackInterface.OnMove;
                 @Move.canceled -= m_Wrapper.m_BasicActionsCallbackInterface.OnMove;
+                @Interact.started -= m_Wrapper.m_BasicActionsCallbackInterface.OnInteract;
+                @Interact.performed -= m_Wrapper.m_BasicActionsCallbackInterface.OnInteract;
+                @Interact.canceled -= m_Wrapper.m_BasicActionsCallbackInterface.OnInteract;
             }
             m_Wrapper.m_BasicActionsCallbackInterface = instance;
             if (instance != null)
@@ -227,6 +329,9 @@ public class @PlayerActionControls : IInputActionCollection, IDisposable
                 @Move.started += instance.OnMove;
                 @Move.performed += instance.OnMove;
                 @Move.canceled += instance.OnMove;
+                @Interact.started += instance.OnInteract;
+                @Interact.performed += instance.OnInteract;
+                @Interact.canceled += instance.OnInteract;
             }
         }
     }
@@ -237,5 +342,6 @@ public class @PlayerActionControls : IInputActionCollection, IDisposable
         void OnLookUp(InputAction.CallbackContext context);
         void OnCrouch(InputAction.CallbackContext context);
         void OnMove(InputAction.CallbackContext context);
+        void OnInteract(InputAction.CallbackContext context);
     }
 }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class CharacterMovement : MonoBehaviour {
+public class PlayerController : MonoBehaviour {
 
     //Declarations
     protected Animator anim;
@@ -14,6 +14,7 @@ public class CharacterMovement : MonoBehaviour {
     public int jumpForce;
     public Transform feet;
     public Transform cameraTarget;
+    private Collider2D lastTrigger;
 
     private Vector3 previousPos;
     private bool wasOnGround;
@@ -27,6 +28,8 @@ public class CharacterMovement : MonoBehaviour {
     private ParticleSystem.EmissionModule footEmission;
 
     public ParticleSystem poofEffect;
+
+    private bool isInteractable;
 
     //Returns true if the characters x or y value changes
     private bool isMoving {
@@ -60,10 +63,6 @@ public class CharacterMovement : MonoBehaviour {
         controls.Basic.Move.started += context => OnMove(context.ReadValue<float>());
         controls.Basic.Move.canceled += context => AfterMove();
 
-        //Creates jump
-        controls.Basic.Jump.performed += _ => OnJump();
-        controls.Basic.Jump.canceled += _ => AfterJump();
-
         //Makes the look up animation
         controls.Basic.LookUp.started += _ => OnLookUp();
         controls.Basic.LookUp.canceled += _ => AfterLookUp();
@@ -71,6 +70,13 @@ public class CharacterMovement : MonoBehaviour {
         //Makes the crouch animation
         controls.Basic.Crouch.started += _ => OnCrouch();
         controls.Basic.Crouch.canceled += _ => AfterCrouch();
+
+        //Creates jump
+        controls.Basic.Jump.performed += _ => OnJump();
+        controls.Basic.Jump.canceled += _ => AfterJump();
+
+        //Creates interactables
+        controls.Basic.Interact.performed += _ => OnInteract();
 
     }
 
@@ -100,21 +106,6 @@ public class CharacterMovement : MonoBehaviour {
     //This resets the direction after player stops moving
     public void AfterMove() {
         direction = 0;
-    }
-
-    //Funtion that will make character jump
-    private void OnJump() {
-        if(isGrounded()) {
-            rBody.velocity = new Vector2(rBody.velocity.x, jumpForce);
-        } 
-
-    }
-
-    //Function that makes the character jump small
-    private void AfterJump() {
-        if (rBody.velocity.y > 0) {
-            rBody.velocity = new Vector2(rBody.velocity.x, rBody.velocity.y * 0.5f);
-        }
     }
 
     //Function that will make the character look up
@@ -148,6 +139,51 @@ public class CharacterMovement : MonoBehaviour {
         anim.SetBool("isCrouching", false);
     }
 
+    //Funtion that will make character jump
+    private void OnJump() {
+        if (isGrounded()) {
+            rBody.velocity = new Vector2(rBody.velocity.x, jumpForce);
+        }
+
+    }
+
+    //Function that makes the character jump small
+    private void AfterJump() {
+        if (rBody.velocity.y > 0) {
+            rBody.velocity = new Vector2(rBody.velocity.x, rBody.velocity.y * 0.5f);
+        }
+    }
+
+    //Function that runs when the player interacts with items
+    private void OnInteract() {
+        if(isInteractable) {
+            //activate dialogue box and stuff
+            DisableMostControls();
+            lastTrigger.GetComponent<Interactable>().Interact();
+            isInteractable = false;
+        } else {
+            //deactivate dialogue box and stuff
+            EnableMostControls();
+            lastTrigger.GetComponent<Interactable>().StopInteracting();
+            isInteractable = true;
+        }
+    }
+
+    //When player is in range of an interactable
+    private void OnTriggerEnter2D(Collider2D collision) {
+        if(collision.CompareTag("Interactable")) {
+            lastTrigger = collision;
+            isInteractable = true;
+        }
+    }
+
+    //When player leaves the range of an interactable
+    private void OnTriggerExit2D(Collider2D collision) {
+        if(collision.CompareTag("Interactable")) {
+            lastTrigger = null;
+            isInteractable = false;
+        }
+    }
 
 
 
@@ -219,5 +255,21 @@ public class CharacterMovement : MonoBehaviour {
     public void DisableMovement() {
         controls.Basic.Move.Disable();
         controls.Basic.Jump.Disable();
+    }
+
+    //Enables all controls except interact button
+    public void EnableMostControls() {
+        controls.Basic.Move.Enable();
+        controls.Basic.Jump.Enable();
+        controls.Basic.Crouch.Enable();
+        controls.Basic.LookUp.Enable();
+    }
+
+    //Disables all controls except interact button
+    public void DisableMostControls() {
+        controls.Basic.Move.Disable();
+        controls.Basic.Jump.Disable();
+        controls.Basic.Crouch.Disable();
+        controls.Basic.LookUp.Disable();
     }
 }
