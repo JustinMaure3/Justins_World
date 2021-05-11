@@ -8,7 +8,6 @@ public class Interactable : MonoBehaviour {
     public GameObject dialogueBox;
     private Text dialogeText;
     public string dialogue;
-    public bool isDialogueActive = false;
 
     private void Awake() {
         dialogeText = dialogueBox.GetComponentInChildren<Text>();

@@ -46,7 +46,10 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Props
+  - name: Foreground
+    uniqueID: 965048397
+    locked: 0
+  - name: Ground
     uniqueID: 796640451
     locked: 0
   - name: Particles

@@ -156,16 +156,18 @@ public class PlayerController : MonoBehaviour {
 
     //Function that runs when the player interacts with items
     private void OnInteract() {
-        if(isInteractable) {
-            //activate dialogue box and stuff
-            DisableMostControls();
-            lastTrigger.GetComponent<Interactable>().Interact();
-            isInteractable = false;
-        } else {
-            //deactivate dialogue box and stuff
-            EnableMostControls();
-            lastTrigger.GetComponent<Interactable>().StopInteracting();
-            isInteractable = true;
+        if(lastTrigger != null) {
+            if (isInteractable) {
+                //activate dialogue box and stuff
+                DisableMostControls();
+                lastTrigger.GetComponent<Interactable>().Interact();
+                isInteractable = false;
+            } else {
+                //deactivate dialogue box and stuff
+                EnableMostControls();
+                lastTrigger.GetComponent<Interactable>().StopInteracting();
+                isInteractable = true;
+            }
         }
     }
 
