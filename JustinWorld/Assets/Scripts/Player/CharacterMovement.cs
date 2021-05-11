@@ -56,8 +56,9 @@ public class CharacterMovement : MonoBehaviour {
         //Grabs the PlayerControls
         controls = new PlayerActionControls();
 
-        //Creates movement using the left joystick
-        controls.Basic.Movement.performed += context => OnMove(context.ReadValue<Vector2>().x);
+        //Creating Dpad movement
+        controls.Basic.Move.started += context => OnMove(context.ReadValue<float>());
+        controls.Basic.Move.canceled += context => AfterMove();
 
         //Creates jump
         controls.Basic.Jump.performed += _ => OnJump();
@@ -75,28 +76,30 @@ public class CharacterMovement : MonoBehaviour {
 
     //This runs every frame
     private void Update() {
+        //Check if you can move player
+        if(controls.Basic.Move.enabled) {
+            rBody.velocity = new Vector2(direction * speed, rBody.velocity.y);
+        }
         SetAnim();
     }
 
-    //This function gets user input and changes the direction accordingly
-    private void OnMove(float movement) {
+    //This get user input and moves in correct direction
+    public void OnMove(float movement) {
         if (movement != 0) {
-            //Reset direction
-            direction = 0;
-
             if (movement > 0f) {
-                direction += 1;
+                direction = 1;
 
             } else if (movement < -0f) {
-                direction += -1;
+                direction = -1;
 
             }
-        } else {
-            direction = 0;
         }
-        //Move Character
-        rBody.velocity = new Vector2(direction * speed, rBody.velocity.y);
         SetCamTarget();
+    }
+
+    //This resets the direction after player stops moving
+    public void AfterMove() {
+        direction = 0;
     }
 
     //Funtion that will make character jump
@@ -209,12 +212,12 @@ public class CharacterMovement : MonoBehaviour {
     }
 
     public void EnableMovement() {
-        controls.Basic.Movement.Enable();
+        controls.Basic.Move.Enable();
         controls.Basic.Jump.Enable();
     }
 
     public void DisableMovement() {
-        controls.Basic.Movement.Disable();
+        controls.Basic.Move.Disable();
         controls.Basic.Jump.Disable();
     }
 }

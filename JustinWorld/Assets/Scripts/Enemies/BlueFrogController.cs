@@ -11,7 +11,7 @@ public class BlueFrogController : MonoBehaviour {
     private bool isShooting = false;
 
     //This is used to have a certain distance before the frog turns towards the player
-    public float turnDistance = 0.3f;
+    public float turnDistance = 0.1f;
 
     private void Awake() {
         anim = GetComponent<Animator>();
