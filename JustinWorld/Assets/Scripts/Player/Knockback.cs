@@ -23,7 +23,7 @@ public class Knockback : MonoBehaviour {
         }
 
         //Start knockback
-        if (!GetComponent<HeartSystem>().canTakeDamage) {
+        if (!HeartManager.instance.canTakeDamage) {
             StartCoroutine(KnockBack());
         }
     }

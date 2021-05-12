@@ -2,16 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HeartSystem : MonoBehaviour {
+public class HeartManager : MonoBehaviour {
+    public static HeartManager instance;
 
-    public GameObject[] hearts;
-    public int life;
-    public float invincibilityTimer;
+    public GameObject heart1;
+    public GameObject heart2;
+    public GameObject heart3;
+    public int life = 3;
+    public float invincibilityTimer = 3;
     public bool canTakeDamage = true;
 
     public GameObject player;
 
     private void Awake() {
+        instance = this;
         player = GameObject.FindGameObjectWithTag("Player");
     }
 
@@ -19,16 +23,28 @@ public class HeartSystem : MonoBehaviour {
     public void takeDamage(Transform enemy) {
         if(canTakeDamage) {
             life--;
-            if (life == 0) {
-                hearts[0].gameObject.GetComponent<Animator>().SetBool("isDirty", true);
-                //GAME OVER
-            } else if (life == 1) {
-                hearts[1].gameObject.GetComponent<Animator>().SetBool("isDirty", true);
-            } else if (life == 2) {
-                hearts[2].gameObject.GetComponent<Animator>().SetBool("isDirty", true);
+
+            //Apply invulnerability and knockback
+            if (life > 0) {
+                _ = StartCoroutine(GetInvulnerable());
+                player.GetComponent<Knockback>().ActivateKnockback(enemy);
             }
-            _ = StartCoroutine(GetInvulnerable());
-            GetComponent<Knockback>().ActivateKnockback(enemy);
+
+            //Update hearts
+            if (life == 0) {
+                heart1.gameObject.GetComponent<Animator>().SetBool("isDirty", true);
+                //GAME OVER
+                LevelManager.instance.Respawn();
+                restoreAll();
+                //Reset timer
+
+
+
+            } else if (life == 1) {
+                heart2.gameObject.GetComponent<Animator>().SetBool("isDirty", true);
+            } else if (life == 2) {
+                heart3.gameObject.GetComponent<Animator>().SetBool("isDirty", true);
+            }
         }
     }
 
@@ -54,22 +70,23 @@ public class HeartSystem : MonoBehaviour {
         yield return new WaitForSeconds(1);
 
         //Fade back to original color
-        for(float time = 0; time < 1.0f; time += Time.deltaTime/fadeTime) {
+        for (float time = 0; time < 1.0f; time += Time.deltaTime / fadeTime) {
             renderer.color = Color.Lerp(dmgColor, originalColor, time);
             yield return null;
         }
 
-        //turn player color back to normal
-        renderer.color = originalColor;
+            //turn player color back to normal
+            renderer.color = originalColor;
+        
 
     }
 
     public void heal() {
         life++;
         if (life == 3) {
-            hearts[2].gameObject.GetComponent<Animator>().SetBool("isDirty", false);
+            heart3.gameObject.GetComponent<Animator>().SetBool("isDirty", false);
         } else if (life == 2) {
-            hearts[1].gameObject.GetComponent<Animator>().SetBool("isDirty", false);
+            heart2.gameObject.GetComponent<Animator>().SetBool("isDirty", false);
         }
     }
 
@@ -79,5 +96,12 @@ public class HeartSystem : MonoBehaviour {
         }
 
         return false;
+    }
+
+    public void restoreAll() {
+        life = 3;
+        heart1.gameObject.GetComponent<Animator>().SetBool("isDirty", false);
+        heart2.gameObject.GetComponent<Animator>().SetBool("isDirty", false);
+        heart3.gameObject.GetComponent<Animator>().SetBool("isDirty", false);
     }
 }

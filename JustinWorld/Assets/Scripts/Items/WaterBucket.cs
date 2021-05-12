@@ -8,8 +8,8 @@ public class WaterBucket : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D collision) {
         if(collision.tag == "Player" && numOfHeals > 0) {
-            if (collision.GetComponent<HeartSystem>().canHeal()) {
-                collision.GetComponent<HeartSystem>().heal();
+            if (HeartManager.instance.canHeal()) {
+                HeartManager.instance.heal();
                 numOfHeals--;
             }
         }
