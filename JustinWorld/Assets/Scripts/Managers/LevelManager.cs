@@ -8,8 +8,20 @@ public class LevelManager : MonoBehaviour {
     public Transform respawnPoint;
     public GameObject player;
 
+    public GameObject mainCamera;
+
+    private float fallThreshold;
+
+    private void FixedUpdate() {
+        if(player.transform.position.y < fallThreshold) {
+            Respawn();
+            HeartManager.instance.takeDamage();
+        }
+    }
+
     private void Awake() {
         instance = this;
+        fallThreshold = mainCamera.GetComponent<SmoothCamera>().minY - 2;
     }
 
     public void Respawn() {

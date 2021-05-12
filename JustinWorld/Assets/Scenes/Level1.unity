@@ -322,6 +322,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   respawnPoint: {fileID: 1760397179}
   player: {fileID: 2031482909}
+  mainCamera: {fileID: 1766915015}
 --- !u!1 &269420985
 GameObject:
   m_ObjectHideFlags: 0
@@ -2580,6 +2581,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1766915015 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 77649657447486976, guid: 8dbd429f152344c7a99249d1d2c1bcbc,
+    type: 3}
+  m_PrefabInstance: {fileID: 1851548065}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1813240946
 GameObject:
   m_ObjectHideFlags: 0
@@ -6544,21 +6551,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2933181255245908301, guid: 2ecaea2514c1e4863a3b93e2f08f7090,
-        type: 3}
-      propertyPath: hearts.Array.data[0]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 2933181255245908301, guid: 2ecaea2514c1e4863a3b93e2f08f7090,
-        type: 3}
-      propertyPath: hearts.Array.data[1]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 2933181255245908301, guid: 2ecaea2514c1e4863a3b93e2f08f7090,
-        type: 3}
-      propertyPath: hearts.Array.data[2]
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 8133078482349232820, guid: 2ecaea2514c1e4863a3b93e2f08f7090,
         type: 3}
       propertyPath: m_RootOrder

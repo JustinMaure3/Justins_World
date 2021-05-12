@@ -33,13 +33,22 @@ public class HeartManager : MonoBehaviour {
             //Update hearts
             if (life == 0) {
                 heart1.gameObject.GetComponent<Animator>().SetBool("isDirty", true);
-                //GAME OVER
-                LevelManager.instance.Respawn();
-                restoreAll();
-                //Reset timer
+                GameOver();
+            } else if (life == 1) {
+                heart2.gameObject.GetComponent<Animator>().SetBool("isDirty", true);
+            } else if (life == 2) {
+                heart3.gameObject.GetComponent<Animator>().SetBool("isDirty", true);
+            }
+        }
+    }
 
-
-
+    public void takeDamage() {
+        if (canTakeDamage) {
+            life--;
+            //Update hearts
+            if (life == 0) {
+                heart1.gameObject.GetComponent<Animator>().SetBool("isDirty", true);
+                GameOver();
             } else if (life == 1) {
                 heart2.gameObject.GetComponent<Animator>().SetBool("isDirty", true);
             } else if (life == 2) {
@@ -103,5 +112,15 @@ public class HeartManager : MonoBehaviour {
         heart1.gameObject.GetComponent<Animator>().SetBool("isDirty", false);
         heart2.gameObject.GetComponent<Animator>().SetBool("isDirty", false);
         heart3.gameObject.GetComponent<Animator>().SetBool("isDirty", false);
+    }
+
+    //Function for when the players hearts run out
+    public void GameOver() {
+        //GAME OVER
+        LevelManager.instance.Respawn();
+        restoreAll();
+        //Reset timer
+
+
     }
 }
