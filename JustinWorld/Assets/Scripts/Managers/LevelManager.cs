@@ -22,10 +22,7 @@ public class LevelManager : MonoBehaviour {
     private void Awake() {
         instance = this;
         fallThreshold = mainCamera.GetComponent<SmoothCamera>().minY - 2;
-    }
-
-    private void Start() {
-        //PauseMenuManager.instance.Resume();
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     public void Respawn() {

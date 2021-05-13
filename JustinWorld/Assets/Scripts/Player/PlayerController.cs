@@ -56,7 +56,7 @@ public class PlayerController : MonoBehaviour {
         col = GetComponent<CircleCollider2D>();
         footEmission = footsteps.emission;
 
-        //Grabs the PlayerControls
+        ////Grabs the PlayerControls
         controls = new PlayerActionControls();
 
         //Creating Dpad movement
@@ -78,11 +78,9 @@ public class PlayerController : MonoBehaviour {
         //Creates interact
         controls.Basic.Interact.performed += _ => OnInteract();
 
-    }
-
-    private void Start() {
-        //When the player hits the start button
+        //Creates pause button 
         controls.Basic.Pause.performed += _ => PauseMenuManager.instance.OnPauseButton();
+
     }
 
     //This runs every frame

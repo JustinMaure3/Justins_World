@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.InputSystem;
 
 public class PauseMenuManager : MonoBehaviour {
     public static PauseMenuManager instance;
@@ -15,21 +16,13 @@ public class PauseMenuManager : MonoBehaviour {
     private void Awake() {
         instance = this;
         player = GameObject.FindWithTag("Player");
-    }
-
-    private void Start() {
-        pauseMenuUI.SetActive(false);
         isPaused = false;
     }
 
     //Function is triggered when player hits the pause button
     public void OnPauseButton() {
-        if(isPaused) {
-            Resume();
-            print("Resuming");
-        } else {
+        if(!isPaused) {
             Pause();
-            print("Pausing");
         }
     }
 
@@ -58,15 +51,17 @@ public class PauseMenuManager : MonoBehaviour {
     }
 
     //When the options button is pressed
-    public void OnOptionsButton() {
-
+    public void OnRestartButton() {
+        //Restart the level
+        Time.timeScale = 1f;
+        //isPaused = false;
+        SceneManager.LoadScene("Level1", LoadSceneMode.Single);
     }
 
     //When the exit button is pressed
     public void OnExitButton() {
         //Launch the main menu
         Time.timeScale = 1f;
-        Resume();
         SceneManager.LoadScene("MainMenu", LoadSceneMode.Single);
     }
 
