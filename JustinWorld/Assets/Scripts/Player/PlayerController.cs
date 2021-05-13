@@ -20,7 +20,7 @@ public class PlayerController : MonoBehaviour {
     private bool wasOnGround;
 
     //Input System
-    PlayerActionControls controls;
+    public PlayerActionControls controls;
 
     [SerializeField] private LayerMask ground;
 
@@ -75,9 +75,14 @@ public class PlayerController : MonoBehaviour {
         controls.Basic.Jump.performed += _ => OnJump();
         controls.Basic.Jump.canceled += _ => AfterJump();
 
-        //Creates interactables
+        //Creates interact
         controls.Basic.Interact.performed += _ => OnInteract();
 
+    }
+
+    private void Start() {
+        //When the player hits the start button
+        controls.Basic.Pause.performed += _ => PauseMenuManager.instance.OnPauseButton();
     }
 
     //This runs every frame
@@ -241,12 +246,13 @@ public class PlayerController : MonoBehaviour {
 
 
     //On Enable and disable for button presses
-    void OnEnable() {
+    public void OnEnable() {
         controls.Basic.Enable();
     }
 
-    void OnDisable() {
+    public void OnDisable() {
         controls.Basic.Disable();
+        controls.Basic.Pause.Enable();
     }
 
     public void EnableMovement() {

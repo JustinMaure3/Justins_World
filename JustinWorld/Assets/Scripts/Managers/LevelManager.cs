@@ -24,6 +24,10 @@ public class LevelManager : MonoBehaviour {
         fallThreshold = mainCamera.GetComponent<SmoothCamera>().minY - 2;
     }
 
+    private void Start() {
+        //PauseMenuManager.instance.Resume();
+    }
+
     public void Respawn() {
         player.transform.position = respawnPoint.position;
 

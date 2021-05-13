@@ -57,6 +57,14 @@ public class @PlayerActionControls : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Pause"",
+                    ""type"": ""Button"",
+                    ""id"": ""53858cc5-bed4-49f8-85f5-ef92eb200ccd"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -213,6 +221,17 @@ public class @PlayerActionControls : IInputActionCollection, IDisposable
                     ""action"": ""Interact"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""786d32de-d580-459a-94c8-5ce0681012ff"",
+                    ""path"": ""<Gamepad>/start"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -226,6 +245,7 @@ public class @PlayerActionControls : IInputActionCollection, IDisposable
         m_Basic_Crouch = m_Basic.FindAction("Crouch", throwIfNotFound: true);
         m_Basic_Move = m_Basic.FindAction("Move", throwIfNotFound: true);
         m_Basic_Interact = m_Basic.FindAction("Interact", throwIfNotFound: true);
+        m_Basic_Pause = m_Basic.FindAction("Pause", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -280,6 +300,7 @@ public class @PlayerActionControls : IInputActionCollection, IDisposable
     private readonly InputAction m_Basic_Crouch;
     private readonly InputAction m_Basic_Move;
     private readonly InputAction m_Basic_Interact;
+    private readonly InputAction m_Basic_Pause;
     public struct BasicActions
     {
         private @PlayerActionControls m_Wrapper;
@@ -289,6 +310,7 @@ public class @PlayerActionControls : IInputActionCollection, IDisposable
         public InputAction @Crouch => m_Wrapper.m_Basic_Crouch;
         public InputAction @Move => m_Wrapper.m_Basic_Move;
         public InputAction @Interact => m_Wrapper.m_Basic_Interact;
+        public InputAction @Pause => m_Wrapper.m_Basic_Pause;
         public InputActionMap Get() { return m_Wrapper.m_Basic; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -313,6 +335,9 @@ public class @PlayerActionControls : IInputActionCollection, IDisposable
                 @Interact.started -= m_Wrapper.m_BasicActionsCallbackInterface.OnInteract;
                 @Interact.performed -= m_Wrapper.m_BasicActionsCallbackInterface.OnInteract;
                 @Interact.canceled -= m_Wrapper.m_BasicActionsCallbackInterface.OnInteract;
+                @Pause.started -= m_Wrapper.m_BasicActionsCallbackInterface.OnPause;
+                @Pause.performed -= m_Wrapper.m_BasicActionsCallbackInterface.OnPause;
+                @Pause.canceled -= m_Wrapper.m_BasicActionsCallbackInterface.OnPause;
             }
             m_Wrapper.m_BasicActionsCallbackInterface = instance;
             if (instance != null)
@@ -332,6 +357,9 @@ public class @PlayerActionControls : IInputActionCollection, IDisposable
                 @Interact.started += instance.OnInteract;
                 @Interact.performed += instance.OnInteract;
                 @Interact.canceled += instance.OnInteract;
+                @Pause.started += instance.OnPause;
+                @Pause.performed += instance.OnPause;
+                @Pause.canceled += instance.OnPause;
             }
         }
     }
@@ -343,5 +371,6 @@ public class @PlayerActionControls : IInputActionCollection, IDisposable
         void OnCrouch(InputAction.CallbackContext context);
         void OnMove(InputAction.CallbackContext context);
         void OnInteract(InputAction.CallbackContext context);
+        void OnPause(InputAction.CallbackContext context);
     }
 }
