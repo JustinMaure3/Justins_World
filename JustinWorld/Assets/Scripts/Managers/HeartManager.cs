@@ -117,10 +117,7 @@ public class HeartManager : MonoBehaviour {
     //Function for when the players hearts run out
     public void GameOver() {
         //GAME OVER
-        LevelManager.instance.Respawn();
-        restoreAll();
-        //Reset timer
-
+        EndMenuManager.instance.ActivateLoseMenu();
 
     }
 }

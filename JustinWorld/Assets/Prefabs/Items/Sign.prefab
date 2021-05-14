@@ -128,7 +128,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueBox: {fileID: 0}
-  dialogue: Oh Boy! This worked!
+  dialogue: You can jump by pressing the X button! The Longer you hold the more powerful
+    the jump.
 --- !u!1 &7450221243127090153
 GameObject:
   m_ObjectHideFlags: 0

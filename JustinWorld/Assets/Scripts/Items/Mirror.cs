@@ -7,10 +7,8 @@ public class Mirror : MonoBehaviour {
     //This method will be used to detect player interaction then move to the next level
     private void OnTriggerEnter2D(Collider2D collision) {
         if(collision.gameObject.tag == "Player") {
-            print("You WIN!");
-
             //Activate winner UI
-            WinMenuManager.instance.ActivateMenu();
+            EndMenuManager.instance.ActivateWinMenu();
         }
         
     }
