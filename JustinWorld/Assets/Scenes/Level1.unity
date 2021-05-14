@@ -1394,6 +1394,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 786862508}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &807507286 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8259109184704682970, guid: 963f77eb2daa341cba0faa2355cfb076,
+    type: 3}
+  m_PrefabInstance: {fileID: 1219413354}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &837530639 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 837530639, guid: 963f77eb2daa341cba0faa2355cfb076,
@@ -2076,10 +2088,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3278359, guid: 963f77eb2daa341cba0faa2355cfb076, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3278360, guid: 963f77eb2daa341cba0faa2355cfb076, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1117871844}
+    - target: {fileID: 248644037, guid: 963f77eb2daa341cba0faa2355cfb076, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 248644038, guid: 963f77eb2daa341cba0faa2355cfb076, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -2092,6 +2112,14 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 154920661}
+    - target: {fileID: 931647123, guid: 963f77eb2daa341cba0faa2355cfb076, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1040683557, guid: 963f77eb2daa341cba0faa2355cfb076, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 1040683558, guid: 963f77eb2daa341cba0faa2355cfb076, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -2108,6 +2136,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1117871844}
+    - target: {fileID: 8497345102548784957, guid: 963f77eb2daa341cba0faa2355cfb076,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 8706027046422969589, guid: 963f77eb2daa341cba0faa2355cfb076,
         type: 3}
       propertyPath: m_Name
@@ -2249,6 +2282,52 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1219413354}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1280907935
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1280907936}
+  - component: {fileID: 1280907937}
+  m_Layer: 0
+  m_Name: TimerManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1280907936
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1280907935}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2043627515}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1280907937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1280907935}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9341cd85ac66740e2abff35d88e3eba5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timerText: {fileID: 807507286}
+  isTimerOn: 0
+  time: 0
 --- !u!1001 &1290184416
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6890,6 +6969,7 @@ Transform:
   - {fileID: 519252795}
   - {fileID: 154920660}
   - {fileID: 1117871843}
+  - {fileID: 1280907936}
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

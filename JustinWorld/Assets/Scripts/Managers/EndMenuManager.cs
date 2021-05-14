@@ -22,6 +22,7 @@ public class EndMenuManager : MonoBehaviour {
 
     //When the player reaches the end
     public void ActivateWinMenu() {
+
         //Pause game
         Time.timeScale = 0f;
 
@@ -30,6 +31,9 @@ public class EndMenuManager : MonoBehaviour {
 
         //Disable player controls
         player.GetComponent<PlayerController>().controls.Basic.Disable();
+
+        //End the timer
+        TimerManager.instance.EndTimer();
 
         //Set first button to selected
         EventSystem.current.SetSelectedGameObject(winMenuUI.GetComponentInChildren<Button>().gameObject, null);
@@ -45,6 +49,9 @@ public class EndMenuManager : MonoBehaviour {
 
         //Disable player controls
         player.GetComponent<PlayerController>().controls.Basic.Disable();
+
+        //End Timer
+        TimerManager.instance.EndTimer();
 
         //Set first button to selected
         EventSystem.current.SetSelectedGameObject(loseMenuUI.GetComponentInChildren<Button>().gameObject, null);
