@@ -9,9 +9,8 @@ public class Mirror : MonoBehaviour {
         if(collision.gameObject.tag == "Player") {
             print("You WIN!");
 
-            //Disable controls
-
-            //Enable winner UI
+            //Activate winner UI
+            WinMenuManager.instance.ActivateMenu();
         }
         
     }
