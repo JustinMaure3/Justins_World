@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour {
     protected Collider2D col;
     protected float direction;
     public int speed;
-    public int jumpForce;
+    public float jumpForce;
     public Transform feet;
     public Transform cameraTarget;
     private Collider2D lastTrigger;

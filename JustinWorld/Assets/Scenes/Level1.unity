@@ -2001,7 +2001,7 @@ MonoBehaviour:
   winMenuUI: {fileID: 931647123}
   loseMenuUI: {fileID: 837530639}
   player: {fileID: 0}
-  nextLevel: sampleScene2
+  nextLevel: Level2
   currentLevel: Level1
 --- !u!1001 &1179513720
 PrefabInstance:

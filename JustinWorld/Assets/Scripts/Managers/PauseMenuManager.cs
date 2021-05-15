@@ -55,7 +55,7 @@ public class PauseMenuManager : MonoBehaviour {
         //Restart the level
         Time.timeScale = 1f;
         //isPaused = false;
-        SceneManager.LoadScene("Level1", LoadSceneMode.Single);
+        SceneManager.LoadScene(EndMenuManager.instance.currentLevel, LoadSceneMode.Single);
     }
 
     //When the exit button is pressed
