@@ -2568,7 +2568,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1387175905
 GameObject:
@@ -2600,7 +2600,7 @@ Transform:
   - {fileID: 713650182}
   - {fileID: 269420986}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1463442930
 GameObject:
@@ -2967,7 +2967,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1766915015 stripped
 GameObject:
@@ -6693,6 +6693,83 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1831606041}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1832682164
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1994586885, guid: c5e3c5db741d540cda04e323012cd316, type: 3}
+      propertyPath: dialogue
+      value: Mirrors mark the end of the level
+      objectReference: {fileID: 0}
+    - target: {fileID: 1994586885, guid: c5e3c5db741d540cda04e323012cd316, type: 3}
+      propertyPath: dialogueBox
+      value: 
+      objectReference: {fileID: 1219413355}
+    - target: {fileID: 7450221243020686355, guid: c5e3c5db741d540cda04e323012cd316,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7450221243020686355, guid: c5e3c5db741d540cda04e323012cd316,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 8.884
+      objectReference: {fileID: 0}
+    - target: {fileID: 7450221243020686355, guid: c5e3c5db741d540cda04e323012cd316,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.184
+      objectReference: {fileID: 0}
+    - target: {fileID: 7450221243020686355, guid: c5e3c5db741d540cda04e323012cd316,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7450221243020686355, guid: c5e3c5db741d540cda04e323012cd316,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7450221243020686355, guid: c5e3c5db741d540cda04e323012cd316,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7450221243020686355, guid: c5e3c5db741d540cda04e323012cd316,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7450221243020686355, guid: c5e3c5db741d540cda04e323012cd316,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7450221243020686355, guid: c5e3c5db741d540cda04e323012cd316,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7450221243020686355, guid: c5e3c5db741d540cda04e323012cd316,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7450221243020686355, guid: c5e3c5db741d540cda04e323012cd316,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7450221243020686367, guid: c5e3c5db741d540cda04e323012cd316,
+        type: 3}
+      propertyPath: m_Name
+      value: Sign2
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c5e3c5db741d540cda04e323012cd316, type: 3}
 --- !u!1001 &1851548065
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6971,7 +7048,7 @@ Transform:
   - {fileID: 1117871843}
   - {fileID: 1280907936}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2115680793
 PrefabInstance:
