@@ -9733,7 +9733,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 1.5
   m_Material: {fileID: 6200000, guid: 61313b78e3255498da4051cf0251ba87, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -9812,8 +9812,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6cbe734dd0cf40668b1b633b2b4fe03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
-  jumpForce: 5
+  speed: 3.2
+  jumpForce: 7.8
   feet: {fileID: 65015614}
   cameraTarget: {fileID: 174530935}
   ground:

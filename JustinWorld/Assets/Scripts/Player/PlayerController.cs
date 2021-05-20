@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour {
     protected Rigidbody2D rBody;
     protected Collider2D col;
     protected float direction;
-    public int speed;
+    public float speed;
     public float jumpForce;
     public Transform feet;
     public Transform cameraTarget;
@@ -198,7 +198,7 @@ public class PlayerController : MonoBehaviour {
     //Set camera position along the x axis
     private void SetCamTarget() {
         if(isMoving) {
-            cameraTarget.localPosition = new Vector3(2f * direction, cameraTarget.localPosition.y, cameraTarget.localPosition.z);
+            cameraTarget.localPosition = new Vector3(1.2f * direction, cameraTarget.localPosition.y, cameraTarget.localPosition.z);
         }
 
     }
